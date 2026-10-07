@@ -173,9 +173,9 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 #services .support-card:nth-child(3n){border:2px solid #886FBF}
 
 /* Gentle service backgrounds and matching Lucide icons. */
-#services .support-card:nth-child(3n+1){background:#e4eddc;--service-accent:#587b45;--service-icon-bg:#d2e2c5}
-#services .support-card:nth-child(3n+2){background:#dcefeb;--service-accent:#146e70;--service-icon-bg:#c5e4de}
-#services .support-card:nth-child(3n){background:#ece3f5;--service-accent:#69458f;--service-icon-bg:#ddcdeb}
+#services .support-card:nth-child(3n+1){background:#cfdfbf;--service-accent:#587b45;--service-icon-bg:#d2e2c5}
+#services .support-card:nth-child(3n+2){background:#bee1da;--service-accent:#146e70;--service-icon-bg:#c5e4de}
+#services .support-card:nth-child(3n){background:#dac8eb;--service-accent:#69458f;--service-icon-bg:#ddcdeb}
 #services .service-icon{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;width:52px;height:52px;flex-shrink:0;border-radius:14px;background:var(--service-icon-bg);color:var(--service-accent)}
 #services .service-icon svg{display:block}
 #services .support-card>summary{min-height:320px}
@@ -204,3 +204,18 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 /* Give Our story the same prominence as the main section headings. */
 #our-story h2{margin-bottom:16px}
 #our-story .story-subtitle{font-size:clamp(1.2rem,2.3vw,1.6rem);line-height:1.45;font-weight:500;margin:0 0 32px;color:#2e3c51;text-transform:none}
+
+/* A welcoming, readable FAQ with clear disclosure controls. */
+#faq h2{margin-bottom:18px}
+#faq .section-intro{max-width:750px;margin-bottom:32px}
+#faq .faq-container{max-width:900px;margin-inline:auto}
+#faq .faq-item{margin-bottom:16px;border:1.5px solid #a7bd98;border-radius:14px;background:#fff}
+#faq .faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:20px;list-style:none;background:#f0f5ec;padding:22px 24px;line-height:1.5}
+#faq .faq-item summary::-webkit-details-marker{display:none}
+#faq .faq-item summary::after{content:'+';font-size:1.5rem;line-height:1;flex-shrink:0;color:#587b45}
+#faq .faq-item[open] summary::after{content:'−'}
+#faq .faq-item summary:focus-visible{outline:3px solid #1E8A8A;outline-offset:-4px}
+#faq .faq-body{padding:20px 24px;line-height:1.8}
+#faq .faq-invitation{max-width:900px;margin:32px auto 0;padding:28px;text-align:center;background:#f2edf7;border-radius:16px}
+#faq .faq-invitation h3{margin:0 0 8px;color:#0E1F4D}
+#faq .faq-invitation p{margin:0 0 20px}
