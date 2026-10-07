@@ -1,336 +1,69 @@
-/* =========================================
-   NAVIGATION
-   ========================================= */
+const menuButton = document.getElementById('menuButton');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMenu() { mobileMenu.classList.remove('show'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open navigation menu'); }
+menuButton.addEventListener('click', () => { const open = mobileMenu.classList.toggle('show'); menuButton.setAttribute('aria-expanded', String(open)); menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu'); });
+mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && mobileMenu.classList.contains('show')) { closeMenu(); menuButton.focus(); } });
+function goTo(id) { document.getElementById(id)?.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}); }
+document.getElementById('startHereBtn')?.addEventListener('click', () => goTo('start-here'));
+document.getElementById('learnMoreBtn')?.addEventListener('click', () => goTo('our-story'));
+// Keep the page compact while native details remain usable without JavaScript.
+const supportCards = [...document.querySelectorAll('.support-card')];
+supportCards.forEach(card => card.addEventListener('toggle', () => {
+  if (!card.open) return;
+  supportCards.forEach(other => { if (other !== card) other.open = false; });
+}));
 
-// Get all navigation links
-const navLinks = document.querySelectorAll("nav a");
-
-// Make navigation scroll smoothly
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function (event) {
-
-        const sectionID = link.getAttribute("href");
-
-        // Make sure the link points to a section
-        if (sectionID.startsWith("#")) {
-
-            event.preventDefault();
-
-            const section = document.querySelector(sectionID);
-
-            if (section) {
-                section.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        }
-
-    });
-
-});
-
-
-
-/* =========================================
-   LEARN MORE BUTTON
-   ========================================= */
-
-const learnMoreBtn = document.getElementById("learnMoreBtn");
-
-if (learnMoreBtn) {
-
-    learnMoreBtn.addEventListener("click", function () {
-
-        document.getElementById("our-story").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
+function openLinkedSupport() {
+ const target = document.getElementById(location.hash.slice(1));
+ if (target?.classList.contains('support-card')) target.open = true;
 }
+window.addEventListener('hashchange', openLinkedSupport);
+openLinkedSupport();
+document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+ const target = document.getElementById(link.getAttribute('href').slice(1));
+ if (target?.classList.contains('support-card')) target.open = true;
+}));
 
-
-
-/* =========================================
-   START HERE BUTTON
-   ========================================= */
-
-const startHereBtn = document.getElementById("startHereBtn");
-
-if (startHereBtn) {
-
-    startHereBtn.addEventListener("click", function () {
-
-        document.getElementById("start-here").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
+const resourceIndex = [{"title": "Naturalistic Learning & NET", "description": "How teaching fits play and interests, with a step-by-step explanation and everyday example.", "keywords": "natural environment teaching aba play learning reinforcement prompts generalization toys", "href": "#naturalistic-learning"}, {"title": "Communication & Connection", "description": "Speech, gestures, AAC, expressing needs, asking for help, and connecting with others.", "keywords": "speech talking language nonverbal nonspeaking non speaking device pictures signs connection social help break aac communicate communication", "href": "#communication"}, {"title": "Independence & Daily Living", "description": "Routines, visual checklists, task analysis, self-care, and practical participation at home.", "keywords": "routines routine daily living hygiene handwashing dressing independence life skills visual schedule task analysis packing getting ready", "href": "#independence"}, {"title": "Family Guidance & New Jersey Resources", "description": "Caregiver coaching, NJ Early Intervention, PerformCare, respite, county case management, and parent-information contacts.", "keywords": "new jersey nj early intervention birth toddler evaluation performcare csoc respite break caregiver relief family support guidance funding benefits assistive technology home vehicle modifications case management advocacy state services", "href": "#family-guidance"}, {"title": "Community-Based Learning", "description": "Preparing for outings, access and participation, and NJ camp-support information.", "keywords": "community learning outings library park recreation summer camp activities inclusion accessibility sensory noise crowds transportation", "href": "#community-learning"}, {"title": "School Collaboration", "description": "Working with school teams, IEPs, evaluation referrals, PRISE, SPAN, and parent advisory groups.", "keywords": "school education classroom teacher iep child study team evaluation referral special education rights prise span sepag meetings collaboration accommodations", "href": "#school-collaboration"}, {"title": "Family Conversation Starter", "description": "A free two-page printable for strengths, priorities, provider questions, and next steps.", "keywords": "worksheet printable checklist pdf organizer binder questions meeting parent tools family strengths priorities follow up sample free", "href": "resources/EBSN_Family_Conversation_Starter_v1.pdf", "kind": "Free PDF"}, {"title": "EBSN Practical Toolkits", "description": "Detailed parent guides and visual tools are in development. Purchases are not open yet.", "keywords": "ebsn everyday behavior support nicole toolkit paid workbook guide books parent library aba bible", "href": "#ebsn-toolkits", "kind": "In development"}, {"title": "A.I.R.E.™ Professional Learning", "description": "Professional-development resources about communication, regulation, and inclusive practice are in development.", "keywords": "aire a i r e professional training development educator staff inclusion regulation neurodivergent workshops", "href": "#aire-learning", "kind": "In development"}, {"title": "ATAC — device loans", "description": "Explore short-term technology loans to try equipment before a purchase.", "keywords": "trial lending assistive technology aac new jersey nj Equipment & clothing Statewide", "href": "nj-resource-guide.html#nj-22", "kind": "NJ directory"}, {"title": "ATAC — equipment reuse", "description": "Find routes to reused assistive technology and medical equipment.", "keywords": "wheelchair walker durable medical equipment goodwill reuse new jersey nj Equipment & clothing Statewide", "href": "nj-resource-guide.html#nj-23", "kind": "NJ directory"}, {"title": "Autism New Jersey helpline and referrals", "description": "Use the referral database and helpline to explore autism-related providers and supports.", "keywords": "aba therapist dentist haircut evaluation diagnosis camp new jersey nj Starting points Statewide", "href": "nj-resource-guide.html#nj-4", "kind": "NJ directory"}, {"title": "Autism New Jersey — summer resources", "description": "Find seasonal starting points for camps and summer planning; check each program's current schedule.", "keywords": "camp summer respite family fun day vacation new jersey nj Activities & outings Statewide", "href": "nj-resource-guide.html#nj-35", "kind": "NJ directory"}, {"title": "Back in Action equipment exchange", "description": "Browse the assistive-technology exchange; condition, availability and transaction terms vary.", "keywords": "used equipment buy sell donated new jersey nj Equipment & clothing Statewide", "href": "nj-resource-guide.html#nj-24", "kind": "NJ directory"}, {"title": "BMSCH — hospital music therapy", "description": "Learn about music therapy for children during their hospital experience in New Brunswick; this is not a general community class listing.", "keywords": "music therapy hospital child life Middlesex new jersey nj Therapies & health Central NJ", "href": "nj-resource-guide.html#nj-42", "kind": "NJ directory"}, {"title": "Children's Specialized Hospital — autism services", "description": "Explore autism services and ask which evaluations or programs are currently accepting referrals.", "keywords": "autism diagnosis evaluation aba behavior new jersey nj Therapies & health Multiple NJ locations", "href": "nj-resource-guide.html#nj-39", "kind": "NJ directory"}, {"title": "Children's Specialized Hospital — outpatient care", "description": "Explore pediatric outpatient options and request help finding an appropriate service and location.", "keywords": "occupational ot physical pt speech feeding psychology evaluation therapy new jersey nj Therapies & health Multiple NJ locations", "href": "nj-resource-guide.html#nj-37", "kind": "NJ directory"}, {"title": "Children's Specialized Hospital — psychology in Eatontown", "description": "Explore listed psychology services alongside pediatric therapy options.", "keywords": "mental health anxiety depression counseling psychology trauma Monmouth new jersey nj Therapies & health Central NJ", "href": "nj-resource-guide.html#nj-41", "kind": "NJ directory"}, {"title": "Children's Specialized Hospital — speech and language", "description": "Find speech-language services and ask about communication needs, AAC evaluation and available locations.", "keywords": "speech language slp aac nonspeaking nonverbal communication new jersey nj Therapies & health Multiple NJ locations", "href": "nj-resource-guide.html#nj-38", "kind": "NJ directory"}, {"title": "DDD — applying for adult services", "description": "Start with the Division of Developmental Disabilities application and eligibility information.", "keywords": "adult developmental disability medicaid support coordinator new jersey nj Benefits & transition Statewide", "href": "nj-resource-guide.html#nj-5", "kind": "NJ directory"}, {"title": "DDD — programs and services", "description": "Explore the Supports Program and Community Care Program through the responsible state agency.", "keywords": "day habilitation supported employment adult waiver community care new jersey nj Benefits & transition Statewide", "href": "nj-resource-guide.html#nj-6", "kind": "NJ directory"}, {"title": "DDD — transition planning", "description": "Learn about planning the move from school-based supports to adult services.", "keywords": "turning 18 21 graduation adulthood new jersey nj Benefits & transition Statewide", "href": "nj-resource-guide.html#nj-7", "kind": "NJ directory"}, {"title": "Fun & Function — equipment safety information", "description": "Read product safety guidance for swings, weighted products and other sensory equipment.", "keywords": "sensory items toys weighted blanket vest mounting hardware new jersey nj Equipment & clothing Online", "href": "nj-resource-guide.html#nj-27", "kind": "NJ directory"}, {"title": "Fun & Function — sensory swing example", "description": "Explore a sensory-swing product and ask about appropriate sizing, mounting, supervision and returns before buying.", "keywords": "swings sensory hammock movement equipment new jersey nj Equipment & clothing Online", "href": "nj-resource-guide.html#nj-26", "kind": "NJ directory"}, {"title": "Liberty Science Center — sensory days", "description": "Explore the Jersey City museum's sensory-day information and current schedule.", "keywords": "family fun day museum Hudson Jersey City science activities new jersey nj Activities & outings North NJ", "href": "nj-resource-guide.html#nj-30", "kind": "NJ directory"}, {"title": "Mane Stream — adaptive riding and therapy", "description": "Oldwick programs include equine activities and therapy services. Ask which program, clinician and eligibility rules fit your needs.", "keywords": "horses equine hippotherapy riding Hunterdon occupational physical speech new jersey nj Activities & outings Central NJ", "href": "nj-resource-guide.html#nj-36", "kind": "NJ directory"}, {"title": "NJ 211 local help finder", "description": "Search by ZIP code for food, clothing, housing and other community assistance.", "keywords": "clothes coats diapers rent food pantry shelter utilities zip code new jersey nj Daily needs Statewide", "href": "nj-resource-guide.html#nj-3", "kind": "NJ directory"}, {"title": "NJ 211 — food pantries", "description": "Locate food assistance by ZIP code and confirm hours and required documents before visiting.", "keywords": "food meals pantry hunger nutrition new jersey nj Daily needs Statewide", "href": "nj-resource-guide.html#nj-43", "kind": "NJ directory"}, {"title": "NJ ABLE", "description": "Explore disability-related savings, qualified expenses and current program rules.", "keywords": "able savings account money ssi new jersey nj Benefits & transition Statewide", "href": "nj-resource-guide.html#nj-9", "kind": "NJ directory"}, {"title": "NJ assistive technology starting point", "description": "Explore technology and equipment resources for communication and everyday access.", "keywords": "aac communication device tablet technology new jersey nj Equipment & clothing Statewide", "href": "nj-resource-guide.html#nj-21", "kind": "NJ directory"}, {"title": "NJ Disability Information Hub", "description": "Find state pathways for disability services, daily needs, employment and independent living.", "keywords": "housing dental vision hearing emergency safety legal rights new jersey nj Starting points Statewide", "href": "nj-resource-guide.html#nj-1", "kind": "NJ directory"}, {"title": "NJ Early Intervention", "description": "A starting point for developmental concerns before age three and learning about evaluation and family services.", "keywords": "baby infant toddler early intervention delay evaluation therapy new jersey nj Therapies & health Statewide", "href": "nj-resource-guide.html#nj-11", "kind": "NJ directory"}, {"title": "NJ FamilyCare", "description": "Find application information for New Jersey's public health coverage program.", "keywords": "insurance medicaid health coverage children new jersey nj Benefits & transition Statewide", "href": "nj-resource-guide.html#nj-10", "kind": "NJ directory"}, {"title": "NJ FamilyCare medical transportation", "description": "Find state information about arranging non-emergency medical rides through Modivcare.", "keywords": "doctor appointment medicaid modivcare ride wheelchair new jersey nj Transportation Statewide", "href": "nj-resource-guide.html#nj-20", "kind": "NJ directory"}, {"title": "NJ Resources guide — Division of Disability Services", "description": "Browse the state's broad resource guide and follow its agency contacts for needs beyond this first edition.", "keywords": "a-z all counties housing utilities legal dental hearing vision new jersey nj Starting points Statewide", "href": "nj-resource-guide.html#nj-2", "kind": "NJ directory"}, {"title": "NJ savings and discount programs", "description": "Explore state-listed savings and discount resources and their individual eligibility rules.", "keywords": "discount bills cost money assistance new jersey nj Daily needs Statewide", "href": "nj-resource-guide.html#nj-45", "kind": "NJ directory"}, {"title": "NJ SNAP information through NJ 211", "description": "Find an overview and application routes for food assistance.", "keywords": "snap food stamps groceries benefits new jersey nj Daily needs Statewide", "href": "nj-resource-guide.html#nj-44", "kind": "NJ directory"}, {"title": "NJ special education parent information", "description": "Read parent guidance, procedural safeguards and special-education resources from NJ education officials.", "keywords": "iep 504 school evaluation child study team prise rights new jersey nj School & advocacy Statewide", "href": "nj-resource-guide.html#nj-16", "kind": "NJ directory"}, {"title": "NJ state park passes", "description": "Check current pass options, including disability-related eligibility information.", "keywords": "park pass discount outdoors family fun new jersey nj Activities & outings Statewide", "href": "nj-resource-guide.html#nj-33", "kind": "NJ directory"}, {"title": "NJ state parks — accessibility", "description": "Find park-accessibility information and contact the individual park about your family's needs.", "keywords": "outdoor trails picnic beach wheelchair nature family day new jersey nj Activities & outings Statewide", "href": "nj-resource-guide.html#nj-32", "kind": "NJ directory"}, {"title": "NJ TRANSIT Access Link", "description": "Read the ADA paratransit service information and application process.", "keywords": "ride wheelchair bus paratransit access link new jersey nj Transportation Statewide", "href": "nj-resource-guide.html#nj-17", "kind": "NJ directory"}, {"title": "NJ TRANSIT reduced fares", "description": "Review eligibility and current application requirements for reduced fares.", "keywords": "discount train bus light rail reduced fare new jersey nj Transportation Statewide", "href": "nj-resource-guide.html#nj-18", "kind": "NJ directory"}, {"title": "NJ transportation and travel training", "description": "Explore county transportation and learning to use public transit through NJTIP.", "keywords": "county ride travel training njtip independent bus new jersey nj Transportation Statewide", "href": "nj-resource-guide.html#nj-19", "kind": "NJ directory"}, {"title": "Pediatric rehabilitation and physiatry", "description": "Explore rehabilitation medical care and ask how the team coordinates therapy and equipment needs.", "keywords": "rehabilitation movement physical therapy orthotics mobility new jersey nj Therapies & health Multiple NJ locations", "href": "nj-resource-guide.html#nj-40", "kind": "NJ directory"}, {"title": "PerformCare — developmental disability supports", "description": "Explore eligibility, respite, assistive technology and other family-support services through NJ's Children's System of Care.", "keywords": "csoc respite caregiver break relief camp funding summer modifications new jersey nj Family support Statewide", "href": "nj-resource-guide.html#nj-13", "kind": "NJ directory"}, {"title": "SPAN Parent Advocacy Network", "description": "Find parent support, training and help navigating education and health systems.", "keywords": "advocacy parents siblings family peer support training new jersey nj Family support Statewide", "href": "nj-resource-guide.html#nj-14", "kind": "NJ directory"}, {"title": "SPAN — health information and transition", "description": "Find family-centered information about healthcare access and transition to adult care.", "keywords": "insurance health care transition family voices new jersey nj Family support Statewide", "href": "nj-resource-guide.html#nj-15", "kind": "NJ directory"}, {"title": "Special Child Health Services", "description": "Ask about county case-management help finding services for a child with special health needs.", "keywords": "county nurse case management coordination medical complex new jersey nj Therapies & health Statewide", "href": "nj-resource-guide.html#nj-12", "kind": "NJ directory"}, {"title": "Special Olympics NJ — Young Athletes", "description": "Explore introductory sports and play opportunities and current registration options.", "keywords": "sports exercise family fun inclusive play young athletes new jersey nj Activities & outings Statewide", "href": "nj-resource-guide.html#nj-34", "kind": "NJ directory"}, {"title": "SSI — benefits for children", "description": "Read Social Security's information about disability and financial eligibility for children.", "keywords": "supplemental security income ssi benefits money disability new jersey nj Benefits & transition Statewide", "href": "nj-resource-guide.html#nj-8", "kind": "NJ directory"}, {"title": "State Theatre NJ — sensory-friendly performances", "description": "Check family and community performance options and the current event calendar.", "keywords": "theater theatre music show family fun Middlesex New Brunswick new jersey nj Activities & outings Central NJ", "href": "nj-resource-guide.html#nj-31", "kind": "NJ directory"}, {"title": "Target — adaptive clothing", "description": "Browse adaptive clothing options and check the features of each individual garment.", "keywords": "sensory clothes clothing dressing tagless pajamas wheelchair new jersey nj Equipment & clothing Online", "href": "nj-resource-guide.html#nj-25", "kind": "NJ directory"}, {"title": "The Loft Barbershop", "description": "Lindenwold barbershop advertising sensory-aware haircut options; contact the business about individual accommodations.", "keywords": "haircut hair cut autism sensory Camden new jersey nj Haircuts & personal care South NJ", "href": "nj-resource-guide.html#nj-29", "kind": "NJ directory"}, {"title": "Uncommon Barber", "description": "Hopatcong-based barber advertising appointments and travel for people who find typical haircut settings difficult.", "keywords": "haircut hair cut barber sensory autism Sussex Morris home visit new jersey nj Haircuts & personal care North NJ", "href": "nj-resource-guide.html#nj-28", "kind": "NJ directory"}, {"title": "Community Health Law Project — document preparation", "description": "NJ’s legal-aid directory lists help with wills, living wills and powers of attorney for eligible low-income people with disabilities and frail older adults. Call 973-275-1175. Ask separately whether special-needs trust drafting is available.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-46", "kind": "NJ directory"}, {"title": "Legal Services of New Jersey — free legal help", "description": "Request free civil legal advice, information or referrals through LSNJ. Call 1-888-576-5529. Ask whether your local program accepts estate-planning cases and can prepare the documents you need.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-47", "kind": "NJ directory"}, {"title": "Northeast NJ Legal Services — Hudson, Bergen and Passaic", "description": "Apply for civil legal assistance in Hudson, Bergen or Passaic County. Ask about eligibility and current estate-planning or referral options; a full estate plan is not guaranteed.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey North NJ", "href": "nj-resource-guide.html#nj-48", "kind": "NJ directory"}, {"title": "Volunteer Lawyers for Justice — veteran estate planning", "description": "VLJ describes help for eligible NJ veterans with limited income who need a simple will, power of attorney or healthcare directive. Call 973-645-1955; confirm current intake and whether your request fits the program.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-49", "kind": "NJ directory"}, {"title": "PLAN|NJ — special-needs and pooled trusts", "description": "Explore special-needs trust administration and the pooled PLAN|NJ Community Trust. Ask about an experienced attorney to create an individual trust and about setup and ongoing fees. This is not a verified free document-drafting service.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-50", "kind": "NJ directory"}, {"title": "LSNJ — wills and trusts information", "description": "Read introductory legal information to prepare questions for an attorney about wills and trusts. Information alone does not create or execute a legal document.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-51", "kind": "NJ directory"}, {"title": "NJ State Bar Foundation — estate-planning education", "description": "Explore public education about wills, advance directives, guardianship and special-needs trusts. Educational programs are separate from attorney representation or document preparation.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-52", "kind": "NJ directory"}, {"title": "County aging agencies — legal assistance referrals", "description": "For older adults, ask the county Area Agency on Aging about available legal-assistance programs and document-planning referrals. Services and eligibility vary.", "keywords": "will wills trust trusts trust fund special needs estate planning pro bono probono free low income attorney lawyer legal living will power of attorney future planning inheritance nj new jersey Statewide", "href": "nj-resource-guide.html#nj-53", "kind": "NJ directory"}, {"title": "LifeTown — family play and activities", "description": "Livingston · Essex County. Explore family play sessions and activities in an inclusive indoor setting. Check registration and what each session includes; Shoppes admission may be separate.", "keywords": "life town lifetown family fun indoor sensory play swimming Essex Livingston nj new jersey", "href": "nj-resource-guide.html#nj-54", "kind": "NJ directory"}, {"title": "LifeTown Shoppes — community life-skills experience", "description": "Livingston · Essex County. Explore LifeTown’s simulated town experience. Confirm family versus group booking options, session activities and any additional cost.", "keywords": "life town lifetown shoppes shopping money life skills community learning independence nj new jersey", "href": "nj-resource-guide.html#nj-55", "kind": "NJ directory"}, {"title": "Dorbrook Recreation Area — Challenger Place", "description": "Colts Neck · Monmouth County. Find information about the universally integrated playground and other park facilities. Check current closures and seasonal availability before visiting.", "keywords": "playground accessible inclusive family fun park Colts Neck Monmouth nj new jersey", "href": "nj-resource-guide.html#nj-56", "kind": "NJ directory"}, {"title": "Jake’s Place — Cherry Hill", "description": "Cherry Hill · Camden County. Explore this inclusive playground at Challenge Grove Park using the state tourism listing. Confirm current park access and facilities before traveling.", "keywords": "playground accessible inclusive family fun Camden Cherry Hill nj new jersey", "href": "nj-resource-guide.html#nj-57", "kind": "NJ directory"}, {"title": "RWJBH Field of Dreams — Toms River", "description": "Toms River · Ocean County. An inclusive recreation complex with a playground, paths, sports areas, miniature golf and a quiet corner. Ask about current hours, membership or admission requirements and events.", "keywords": "field dreams playground accessible inclusive family fun sports Ocean Toms River sensory quiet nj new jersey", "href": "nj-resource-guide.html#nj-58", "kind": "NJ directory"}, {"title": "Adventure Aquarium — sensory-inclusive visits", "description": "Camden · Camden County. Explore sensory accommodations and visit-planning information. Use the aquarium’s current Sensory Sundays calendar for special sessions; confirm tickets and hours.", "keywords": "aquarium animals fish sensory sunday family fun Camden indoor outing nj new jersey", "href": "nj-resource-guide.html#nj-59", "kind": "NJ directory"}, {"title": "NJ recreation programs serving people with disabilities", "description": "Use the NJ Office of Recreation resource page to locate governmental recreation-program contacts. Ask the local program about current activities, residency rules, ages, fees and accommodations.", "keywords": "county town municipal recreation activities inclusive adaptive programs family fun day nj new jersey", "href": "nj-resource-guide.html#nj-60", "kind": "NJ directory"}, {"title": "TSA Cares — airport screening support", "description": "Request help understanding airport security screening and explain disability-related needs before travel. TSA Cares: 855-787-2227. This is screening support, not airline boarding assistance or an exemption from security.", "keywords": "tsa cares security screening airport flying autism nj new jersey", "href": "nj-resource-guide.html#nj-61", "kind": "NJ directory"}, {"title": "Newark Airport — hidden disabilities and sensory spaces", "description": "Explore Newark’s Sunflower lanyard information and sensory spaces. Check your terminal and whether a room is before or after security. A lanyard signals a possible need for support; it does not guarantee priority access.", "keywords": "ewr newark airport sunflower sensory room quiet autism flying nj new jersey", "href": "nj-resource-guide.html#nj-62", "kind": "NJ directory"}, {"title": "DOT — airline disability rights and assistance", "description": "Read about boarding assistance, disability-related seating accommodations and resolving access problems. Ask your airline for its Complaint Resolution Official if a disability-related issue is not resolved.", "keywords": "airline airport preboarding seat caregiver cro complaint flight rights nj new jersey", "href": "nj-resource-guide.html#nj-63", "kind": "NJ directory"}, {"title": "The Arc — Wings for Autism / Wings for All", "description": "Find information about airport rehearsal events. Event locations and dates vary; participation may require advance registration. An NJ event is not guaranteed to be currently available.", "keywords": "practice airplane airport rehearsal flight travel wings autism nj new jersey", "href": "nj-resource-guide.html#nj-64", "kind": "NJ directory"}, {"title": "Delta — cognitive and invisible disability assistance", "description": "Read the airline’s assistance guidance and request support through its accessibility service process. Confirm your individual needs, connections and seating with the airline.", "keywords": "delta airline flight airport assistance autism cognitive nj new jersey", "href": "nj-resource-guide.html#nj-65", "kind": "NJ directory"}, {"title": "Sesame Place Philadelphia — accessibility and sensory guide", "description": "Langhorne, Pennsylvania. Explore sensory information, accessibility options and food-related guidance. Confirm current attraction-access procedures and outside-food exceptions before booking.", "keywords": "vacation trip travel destination autism friendly theme park sensory food picky eater Pennsylvania Langhorne nj new jersey", "href": "nj-resource-guide.html#nj-66", "kind": "NJ directory"}, {"title": "LEGOLAND New York — accessibility planning", "description": "Goshen, New York. Review the resort’s sensory and accessibility resources for the theme park and hotel. Ask about quiet spaces, food options, attraction-access procedures and current availability.", "keywords": "vacation trip destination autism friendly hotel sensory food picky eater New York Goshen nj new jersey", "href": "nj-resource-guide.html#nj-67", "kind": "NJ directory"}, {"title": "National Autistic Society — holiday preparation", "description": "Practical ideas for unfamiliar environments, routines, sensory needs and food while traveling. This is a UK organization: use its general planning ideas and check US or destination-specific rules separately.", "keywords": "vacation travel picky eating selective food sensory packing routine holiday nj new jersey", "href": "nj-resource-guide.html#nj-68", "kind": "NJ directory"}, {"title": "TSA — food in carry-on baggage", "description": "Look up screening rules for the exact foods you plan to carry. Rules can differ for solids, liquids, gels and medically necessary items. International customs rules are separate.", "keywords": "food snacks picky eater selective eating carry on liquids gels airport travel nj new jersey", "href": "nj-resource-guide.html#nj-69", "kind": "NJ directory"}, {"title": "LEGOLAND New York — dining contacts", "description": "Review dining information and the Food and Beverage contact for questions about options. Ask about exact ingredients or textures, plain preparation and bringing familiar foods; do not assume an accommodation is confirmed.", "keywords": "food picky eating selective eater sensory menu allergy dining vacation travel nj new jersey", "href": "nj-resource-guide.html#nj-70", "kind": "NJ directory"}, {"title": "Friendship Circle NJ — adult mornings", "description": "Livingston · Essex County. Explore an adult social program involving LifeTown Shoppes, projects and bowling. Ask about current sessions, registration and individual support arrangements.", "keywords": "adult social peers bowling independent community recreation nj new jersey", "href": "nj-resource-guide.html#nj-71", "kind": "NJ directory"}, {"title": "JESPY House — engagement and enrichment", "description": "South Orange · Essex County. Explore recreation, cultural arts, wellness and group choices for adults with intellectual and developmental disabilities. Admission and service arrangements must be discussed with JESPY.", "keywords": "adult recreation art wellness social independence activities Essex nj new jersey", "href": "nj-resource-guide.html#nj-72", "kind": "NJ directory"}, {"title": "Easterseals NJ — adult day habilitation", "description": "Explore structured, person-centered adult services supporting daily skills and community participation. Ask about service locations, staffing, funding eligibility and assessment of individual needs.", "keywords": "adult individualized assistance substantial support day program community activities nj new jersey", "href": "nj-resource-guide.html#nj-73", "kind": "NJ directory"}, {"title": "Friendship Circle NJ — family programs", "description": "Explore friendship and activity programs for children and families. Ask about the current age groups, program focus, caregiver role and available support; volunteer participation is not a guarantee of clinical or personal-care staffing.", "keywords": "children teen family peer buddy recreation music art sports activities nj new jersey", "href": "nj-resource-guide.html#nj-74", "kind": "NJ directory"}];
+function normalizeResourceQuery(value) {
+ return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
-
-
-
-/* =========================================
-   HERO IMAGE SLIDESHOW
-   ========================================= */
-
-const heroImages = document.querySelectorAll(".hero-image");
-
-let currentHeroImage = 0;
-
-
-// Hide all images except the first
-heroImages.forEach(function (image, index) {
-
-    if (index !== 0) {
-        image.style.display = "none";
-    }
-
-});
-
-
-// Change hero image every 5 seconds
-if (heroImages.length > 1) {
-
-    setInterval(function () {
-
-        // Hide current image
-        heroImages[currentHeroImage].style.display = "none";
-
-        // Move to next image
-        currentHeroImage++;
-
-        if (currentHeroImage >= heroImages.length) {
-            currentHeroImage = 0;
-        }
-
-        // Show next image
-        heroImages[currentHeroImage].style.display = "block";
-
-    }, 5000);
-
+function findResources(value) {
+ const terms = normalizeResourceQuery(value).split(/\s+/).filter(Boolean);
+ if (!terms.length) return [];
+ return resourceIndex.filter(item => {
+  const text = normalizeResourceQuery(item.title + ' ' + item.description + ' ' + item.keywords);
+  return terms.every(term => text.includes(term));
+ });
 }
-
-
-
-/* =========================================
-   HERO NEXT / PREVIOUS BUTTONS
-   ========================================= */
-
-const nextHeroBtn = document.getElementById("nextHero");
-const previousHeroBtn = document.getElementById("previousHero");
-
-
-function showHeroImage(index) {
-
-    heroImages.forEach(function (image) {
-        image.style.display = "none";
-    });
-
-    heroImages[index].style.display = "block";
-
+const resourceQuery = document.getElementById('resource-query');
+const resourceResults = document.getElementById('resource-results');
+const resourceStatus = document.getElementById('resource-search-status');
+const resourceGrid = document.querySelector('#resources .resource-container');
+function updateResourceSearch() {
+ const active = resourceQuery.value.trim().length > 0;
+ resourceResults.replaceChildren(); resourceResults.hidden = !active; resourceGrid.hidden = active;
+ if (!active) { resourceStatus.textContent = ''; return; }
+ const matches = findResources(resourceQuery.value);
+ resourceStatus.textContent = matches.length + (matches.length === 1 ? ' resource found.' : ' resources found.');
+ if (!matches.length) {
+  const message = document.createElement('p');
+  message.textContent = 'No matching resource yet. Try a shorter term such as routines, communication, school, or NJ. Our collection is growing.';
+  const link = document.createElement('a'); link.href = '#contact'; link.className = 'resource-link'; link.textContent = 'Ask us about a resource you need';
+  resourceResults.append(message, link); return;
+ }
+ matches.forEach(item => {
+  const article = document.createElement('article'); article.className = 'search-result';
+  const kind = document.createElement('p'); kind.className = 'result-kind'; kind.textContent = item.kind || 'Free guide';
+  const title = document.createElement('h3'); title.textContent = item.title;
+  const description = document.createElement('p'); description.textContent = item.description;
+  const link = document.createElement('a'); link.href = item.href; link.textContent = item.kind === 'Free PDF' ? 'Open free PDF' : item.kind === 'In development' ? 'See what is planned' : 'Read the guide';
+  link.addEventListener('click', () => { const target = item.href.startsWith('#') ? document.getElementById(item.href.slice(1)) : null; if (target?.classList.contains('support-card')) target.open = true; });
+  article.append(kind, title, description, link); resourceResults.append(article);
+ });
 }
-
-
-if (nextHeroBtn) {
-
-    nextHeroBtn.addEventListener("click", function () {
-
-        currentHeroImage++;
-
-        if (currentHeroImage >= heroImages.length) {
-            currentHeroImage = 0;
-        }
-
-        showHeroImage(currentHeroImage);
-
-    });
-
-}
-
-
-if (previousHeroBtn) {
-
-    previousHeroBtn.addEventListener("click", function () {
-
-        currentHeroImage--;
-
-        if (currentHeroImage < 0) {
-            currentHeroImage = heroImages.length - 1;
-        }
-
-        showHeroImage(currentHeroImage);
-
-    });
-
-}
-
-
-
-/* =========================================
-   FAQ DROPDOWNS
-   ========================================= */
-
-const faqQuestions = document.querySelectorAll(".faq-question");
-
-faqQuestions.forEach(function (question) {
-
-    question.addEventListener("click", function () {
-
-        const answer = question.nextElementSibling;
-
-        // Open / close answer
-        if (answer.style.display === "block") {
-
-            answer.style.display = "none";
-
-        } else {
-
-            answer.style.display = "block";
-
-        }
-
-    });
-
-});
-
-
-
-/* =========================================
-   SERVICES
-   ========================================= */
-
-const serviceButtons = document.querySelectorAll(".service-button");
-
-serviceButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        const destination = button.getAttribute("data-target");
-
-        const section = document.getElementById(destination);
-
-        if (section) {
-
-            section.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-});
-
-
-
-/* =========================================
-   RESOURCE BUTTONS
-   ========================================= */
-
-const resourceButtons = document.querySelectorAll(".resource-button");
-
-resourceButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        const resource = button.getAttribute("data-resource");
-
-        if (resource) {
-
-            window.location.href = resource;
-
-        }
-
-    });
-
-});
-
-
-
-/* =========================================
-   CONTACT BUTTON
-   ========================================= */
-
-const contactButtons = document.querySelectorAll(".contact-button");
-
-contactButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-        document.getElementById("contact").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-
-});
-
-
-
-/* =========================================
-   MOBILE MENU
-   ========================================= */
-
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
-
-
-if (menuButton && mobileMenu) {
-
-    menuButton.addEventListener("click", function () {
-
-        mobileMenu.classList.toggle("show");
-
-    });
-
-}
-
-
-
-/* =========================================
-   START HERE STEPS
-   ========================================= */
-
-const steps = document.querySelectorAll(".start-step");
-
-steps.forEach(function (step) {
-
-    step.addEventListener("click", function () {
-
-        // Remove active status from all steps
-        steps.forEach(function (item) {
-            item.classList.remove("active");
-        });
-
-        // Make selected step active
-        step.classList.add("active");
-
-    });
-
-});
-
-
-
-/* =========================================
-   FORM
-   ========================================= */
-
-const contactForm = document.getElementById("contactForm");
-
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        alert("Thank you! Your message has been received.");
-
-        contactForm.reset();
-
-    });
-
-}
+resourceQuery.addEventListener('input', updateResourceSearch);
+document.querySelector('.resource-search').addEventListener('submit', event => { event.preventDefault(); updateResourceSearch(); });
+document.getElementById('clear-resource-search').addEventListener('click', () => { resourceQuery.value = ''; updateResourceSearch(); resourceQuery.focus(); });
+document.querySelectorAll('[data-search]').forEach(button => button.addEventListener('click', () => { resourceQuery.value = button.dataset.search; updateResourceSearch(); resourceQuery.focus(); }));
