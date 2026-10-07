@@ -16,14 +16,14 @@ body{background:#fff;color:#0E1F4D}
 .services,.resources,.start-here{background:#FAF8F2}
 .brand-band{background:#fff;border-block:1px solid #dce3d8}
 .brand-band p,.founder-perspective blockquote,.concerns .section-container>p:last-of-type,.team-member .job-title{font-family:'Lora',Georgia,serif;font-style:italic;color:#70529e}
-.founder-perspective blockquote{background:#f7f3fb;border-color:#886FBF}
+.founder-perspective blockquote{background:#ece3f5;border-color:#886FBF}
 .service,.resource,.team-member,.start-step,.card{background:#fff;border:1px solid #DDE3E8;border-radius:16px;box-shadow:0 8px 22px #0e1f4d0a}
 .service:nth-child(3n+1),.card:nth-child(3n+1){border-top:2px solid #7FA36B}
 .service:nth-child(3n+2),.card:nth-child(3n+2){border-top:2px solid #1E8A8A}
 .service:nth-child(3n),.card:nth-child(3n){border-top:2px solid #886FBF}
 .faq-item{border:1px solid #d8cbe8;border-radius:14px;overflow:hidden}
-.faq-item summary{background:#f7f3fb;color:#0E1F4D}
-.resource-next,.panel{background:#f7f3fb;border:1px solid #d8cbe8;border-radius:16px}
+.faq-item summary{background:#ece3f5;color:#0E1F4D}
+.resource-next,.panel{background:#ece3f5;border:1px solid #d8cbe8;border-radius:16px}
 .contact-panel{background:#fff;border:1px solid #bfd0c0;border-radius:16px}
 .eyebrow,.hero .eyebrow{color:#1E8A8A}
 .logo-tagline{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:6px;font:italic 10px/1.4 'Lora',Georgia,serif;color:#70529e;white-space:nowrap}
@@ -173,9 +173,9 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 #services .support-card:nth-child(3n){border:2px solid #886FBF}
 
 /* Gentle service backgrounds and matching Lucide icons. */
-#services .support-card:nth-child(3n+1){background:#f3f7f0;--service-accent:#587b45;--service-icon-bg:#e4eddc}
-#services .support-card:nth-child(3n+2){background:#f0f8f7;--service-accent:#146e70;--service-icon-bg:#dcefeb}
-#services .support-card:nth-child(3n){background:#f7f3fb;--service-accent:#69458f;--service-icon-bg:#ece3f5}
+#services .support-card:nth-child(3n+1){background:#e4eddc;--service-accent:#587b45;--service-icon-bg:#d2e2c5}
+#services .support-card:nth-child(3n+2){background:#dcefeb;--service-accent:#146e70;--service-icon-bg:#c5e4de}
+#services .support-card:nth-child(3n){background:#ece3f5;--service-accent:#69458f;--service-icon-bg:#ddcdeb}
 #services .service-icon{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;width:52px;height:52px;flex-shrink:0;border-radius:14px;background:var(--service-icon-bg);color:var(--service-accent)}
 #services .service-icon svg{display:block}
 #services .support-card>summary{min-height:320px}
