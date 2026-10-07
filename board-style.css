@@ -200,3 +200,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* Keep the story headings in sentence case. */
 #our-story .eyebrow,#our-story h2{text-transform:none}
+
+/* Give Our story the same prominence as the main section headings. */
+#our-story h2{margin-bottom:16px}
+#our-story .story-subtitle{font-size:clamp(1.2rem,2.3vw,1.6rem);line-height:1.45;font-weight:500;margin:0 0 32px;color:#2e3c51;text-transform:none}
