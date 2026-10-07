@@ -191,3 +191,8 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 #our-story .about-image figcaption{text-align:center}
 #our-story.about::after{display:none}
 @media(max-width:560px){#our-story .story-photo-frame{padding:10px}#our-story .story-photo-mount::after{width:110px;height:88px}}
+
+/* Center all six service-card summaries and controls. */
+#services .support-card>summary{text-align:center;align-items:center}
+#services .support-card>summary h3,#services .support-card>summary p{width:100%;text-align:center}
+#services .service-icon,#services .support-toggle{align-self:center}
