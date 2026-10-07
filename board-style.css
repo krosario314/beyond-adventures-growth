@@ -197,3 +197,6 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 #concerns h2{max-width:none;font-size:clamp(1.5rem,3vw,2.2rem);text-wrap:initial}
 @media(min-width:700px){#concerns h2{white-space:nowrap}}
 @media(max-width:699px){#concerns h2{white-space:normal}}
+
+/* Keep the story headings in sentence case. */
+#our-story .eyebrow,#our-story h2{text-transform:none}
