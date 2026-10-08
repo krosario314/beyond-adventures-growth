@@ -1,0 +1,11 @@
+{
+  "name": "Beyond Website Preview",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Beyond Website Preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": "nohup python3 -m http.server 8000 > /tmp/beyond-preview.log 2>&1 &"
+}
