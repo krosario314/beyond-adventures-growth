@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beyond Page Preview</title><style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fbfaf6;color:#0E1F4D}
+main{width:min(980px,92%);margin:0 auto;padding:44px 0 70px}
+a{color:#0E1F4D}.eyebrow{color:#1E8A8A;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+.hero{position:relative;padding:42px;background:linear-gradient(135deg,#f9f7f1 0,#fff 70%);border:1px solid #e1e6df;border-radius:18px;overflow:hidden}
+.hero:after,.section:after{content:"";position:absolute;right:-25px;top:-15px;width:190px;height:125px;background:linear-gradient(135deg,transparent 20%,rgba(127,163,107,.12) 20% 24%,transparent 24% 38%,rgba(127,163,107,.08) 38% 42%,transparent 42%);pointer-events:none}
+h1{font-size:clamp(2rem,4vw,3rem);margin:8px 0 12px}.section{position:relative;margin-top:26px;background:#fff;border:1px solid #e0e6e1;border-left:5px solid #7FA36B;border-radius:16px;padding:28px;box-shadow:0 9px 24px rgba(14,31,77,.06);overflow:hidden}
+p{line-height:1.75;color:#334155}.button{display:inline-flex;margin-top:14px;padding:12px 18px;background:#0E1F4D;color:#fff;text-decoration:none;border-radius:9px;font-weight:700}
+</style></head><body><main><p><a href="preview-current.html">← Back to current preview</a></p><section class="hero"><p class="eyebrow" id="eyebrow"></p><h1 id="title"></h1><p id="intro"></p></section><section class="section"><h2 id="sub"></h2><p id="bodycopy"></p><a class="button" href="preview-current.html">Back to Preview</a></section></main><script>
+const pages={
+support:["Get Support","Let’s Take the First Step Together","You do not need to have every answer. This page guides families through what to expect and what they can do next.","Preparing to Welcome Families","The finished page will explain the intake journey, what to prepare, and how to protect private information while Beyond’s secure intake process is being developed."],
+insurance:["Insurance & Payment","Clear Information Before You Begin","Understanding coverage is part of planning for support. Families can see what questions to ask before making a commitment.","Know What to Ask","The finished page will explain network status, authorizations, deductibles, copays, and other questions families may want to ask their plan."],
+team:["Join Our Team","Build Something Meaningful With Us","A thoughtful team begins with people who listen, respect individuality, and care about the families they support.","What Matters to Beyond","The finished page will explain Beyond’s values, what future job listings will include, and how applications will work when positions open."]
+};
+const key=new URLSearchParams(location.search).get("page")||"support";const p=pages[key]||pages.support;
+["eyebrow","title","intro","sub","bodycopy"].forEach((id,i)=>document.getElementById(id).textContent=p[i]);
+</script></body></html>
