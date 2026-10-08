@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Service Preview | Beyond</title><style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fbfaf6;color:#0E1F4D}
+main{width:min(900px,92%);margin:0 auto;padding:54px 0}
+a{color:#0E1F4D}
+.top{margin-bottom:28px}
+.eyebrow{color:#1E8A8A;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+.panel{position:relative;background:#fff;border:1px solid #dde3e8;border-left:5px solid #587746;border-radius:16px;padding:34px;box-shadow:0 10px 28px rgba(14,31,77,.08);overflow:hidden}
+.panel:after{content:"";position:absolute;right:-25px;top:-10px;width:180px;height:120px;background:linear-gradient(135deg,transparent 20%,rgba(127,163,107,.12) 20% 24%,transparent 24% 38%,rgba(127,163,107,.09) 38% 42%,transparent 42%);pointer-events:none}
+h1{font-size:clamp(2rem,4vw,3rem);margin:8px 0 14px}h2{margin-top:28px}p,li{line-height:1.75;color:#334155}
+.button{display:inline-flex;margin-top:18px;padding:12px 18px;background:#0E1F4D;color:#fff;text-decoration:none;border-radius:9px;font-weight:700}
+</style></head><body><main><div class="top"><a href="preview-current.html">← Back to current preview</a></div><section class="panel"><p class="eyebrow">ABA Service Area</p><h1 id="title"></h1><p id="intro"></p><h2>What this page will do</h2><p>On the finished site, each Learn More button opens a full service page like this instead of stretching one card open on the homepage.</p><p>The page can explain the service, give an everyday example, clarify Beyond’s role, and end with a clear Get Support action.</p><a class="button" href="preview-current.html">Back to Services</a></section></main><script>
+const map={
+"naturalistic-learning":["Naturalistic Learning & NET","Purposeful teaching through play, interests, and everyday routines."],
+"communication":["Communication & Connection","Supporting expression, choices, self-advocacy, and shared experiences."],
+"independence":["Independence & Daily Living","Building participation in the routines that matter to your family."],
+"family-guidance":["Family Guidance & New Jersey Resources","Practical caregiver support and a clearer starting point for finding help."],
+"community-learning":["Community-Based Learning","Making room for participation, choice, and belonging beyond home."],
+"school-collaboration":["School Collaboration","Helping the adults around a child share useful information."]
+};
+const key=new URLSearchParams(location.search).get("service")||"naturalistic-learning";
+const item=map[key]||map["naturalistic-learning"];
+document.getElementById("title").textContent=item[0];document.getElementById("intro").textContent=item[1];
+</script></body></html>
