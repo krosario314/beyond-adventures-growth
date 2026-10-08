@@ -232,51 +232,51 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 }
 
 #services .support-card:nth-child(1) {
-    background: #D2E4C6;
-    border: 1px solid #B1CFA2;
-    border-left: 4px solid #7FA36B;
-    --service-accent: #587B45;
-    --service-icon-bg: #BFD8B3;
+    background: #C6D8B8;
+    border: 1px solid #A6C394;
+    border-left: 5px solid #5F7F4C;
+    --service-accent: #4D6D3D;
+    --service-icon-bg: #B5CEA8;
 }
 
 #services .support-card:nth-child(2) {
-    background: #BFE0DA;
-    border: 1px solid #95CCC1;
-    border-left: 4px solid #1E8A8A;
+    background: #FFFFFF;
+    border: 1px solid #C9DEDA;
+    border-left: 5px solid #1E8A8A;
     --service-accent: #146E70;
-    --service-icon-bg: #A8D6CE;
+    --service-icon-bg: #D9EEEA;
 }
 
 #services .support-card:nth-child(3) {
-    background: #D7C5E8;
-    border: 1px solid #BCA6D5;
-    border-left: 4px solid #886FBF;
-    --service-accent: #69458F;
-    --service-icon-bg: #C7B3DE;
+    background: #D3BEE6;
+    border: 1px solid #B49BCD;
+    border-left: 5px solid #7756A6;
+    --service-accent: #624184;
+    --service-icon-bg: #C0A8D8;
 }
 
 #services .support-card:nth-child(4) {
-    background: #EFD397;
-    border: 1px solid #DAB96F;
-    border-left: 4px solid #D4A24C;
-    --service-accent: #956B22;
-    --service-icon-bg: #E4C886;
+    background: #FFFFFF;
+    border: 1px solid #E6D5AE;
+    border-left: 5px solid #C69234;
+    --service-accent: #8A611C;
+    --service-icon-bg: #F3E1BA;
 }
 
 #services .support-card:nth-child(5) {
-    background: #C6D8EB;
-    border: 1px solid #A8BED8;
-    border-left: 4px solid #58779F;
-    --service-accent: #426185;
-    --service-icon-bg: #B7CCE1;
+    background: #BDD0E3;
+    border: 1px solid #9FB8D0;
+    border-left: 5px solid #4F7098;
+    --service-accent: #3D5D80;
+    --service-icon-bg: #ACC3DA;
 }
 
 #services .support-card:nth-child(6) {
-    background: #D7D9E8;
-    border: 1px solid #B7BED6;
-    border-left: 4px solid #6D7EA5;
-    --service-accent: #4F6087;
-    --service-icon-bg: #C3C9DE;
+    background: #FFFFFF;
+    border: 1px solid #CBDDD8;
+    border-left: 5px solid #4E7F77;
+    --service-accent: #3F6E66;
+    --service-icon-bg: #D7E8E4;
 }
 
 #services .support-card > summary {
