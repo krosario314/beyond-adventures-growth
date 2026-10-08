@@ -750,3 +750,20 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
         padding: 24px 22px;
     }
 }
+
+
+/* =========================================
+   TEAM PHOTO CONSISTENCY
+   ========================================= */
+/* Benjamin's portrait is taller than the card frame. Show the full portrait
+   instead of cropping the top of his head, and keep the photo field clean white. */
+#team .team-member:nth-child(3) img {
+    object-fit: contain;
+    object-position: center top;
+    background: #FFFFFF;
+}
+
+/* Give the team photo areas a consistent clean backdrop. */
+#team .team-member img {
+    background-color: #FFFFFF;
+}
