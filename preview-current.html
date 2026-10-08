@@ -50,6 +50,34 @@ h2{margin:42px 0 10px}
 .small{margin-top:10px;color:#6b7280;font-size:.9rem}
 @media(max-width:850px){.grid,.team{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid,.team{grid-template-columns:1fr}.card{min-height:0}}
+
+/* service-preview-polish */
+.preview-services{position:relative}
+.preview-services::before{
+  content:"";
+  position:absolute;
+  right:0;
+  top:-12px;
+  width:140px;
+  height:90px;
+  background:linear-gradient(135deg,transparent 20%,rgba(127,163,107,.12) 20% 24%,transparent 24% 38%,rgba(127,163,107,.09) 38% 42%,transparent 42%);
+  pointer-events:none;
+}
+.preview-services h2::after{
+  content:"";
+  display:block;
+  width:74px;
+  height:3px;
+  margin-top:14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#1E8A8A 0 34%,#7FA36B 34% 67%,#886FBF 67% 100%);
+}
+.card{transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(14,31,77,.11)}
+.card .icon{transition:transform .2s ease}
+.card:hover .icon{transform:scale(1.04)}
+.more{transition:transform .2s ease}
+.card:hover .more{transform:translateX(3px)}
 </style>
 </head>
 <body>
@@ -57,7 +85,7 @@ h2{margin:42px 0 10px}
 <h1>Beyond Adventures &amp; Growth — Current Preview</h1>
 <p class="note">Temporary live design preview while the full website branch is waiting to be published.</p>
 
-<h2>How we support children and families</h2>
+<section class="preview-services"><h2>How we support children and families</h2>
 <p class="intro">Six coordinated service cards with the stronger left-border treatment you requested.</p>
 
 <section class="grid">
@@ -67,7 +95,7 @@ h2{margin:42px 0 10px}
 <article class="card c4"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362"/></svg></div><h3>Family Guidance &amp; New Jersey Resources</h3><p>Practical caregiver support and a clearer starting point for finding help.</p><div class="more">Learn More +</div></article>
 <article class="card c5"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Community-Based Learning</h3><p>Supporting meaningful participation in everyday community settings.</p><div class="more">Learn More +</div></article>
 <article class="card c6"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M18 4.933V21"/><path d="m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6"/><path d="M6 4.933V21"/><circle cx="12" cy="9" r="2"/></svg></div><h3>School Collaboration</h3><p>Working with educational teams to support consistency and student success.</p><div class="more">Learn More +</div></article>
-</section>
+</section></section>
 
 <h2>Team photo check</h2>
 <p class="intro">Benjamin’s current white-background photo shown in the same 300px team-photo frame.</p>
