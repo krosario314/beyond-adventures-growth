@@ -39,3 +39,148 @@
 .beyond-info-page .page-intro{position:relative;isolation:isolate;background-image:none}
 .beyond-info-page .page-intro::after{content:'';position:absolute;right:12px;bottom:12px;width:240px;height:170px;background:url('05_BRAND_ASSETS/sage-watercolor-green.png') center/contain no-repeat;opacity:.72;filter:saturate(1.45) brightness(.88);pointer-events:none;z-index:-1}
 @media(max-width:800px){.beyond-info-page .page-intro::after{width:170px;height:125px;opacity:.72;filter:saturate(1.45) brightness(.88)}}
+
+
+/* =========================================
+   POLISHED SECONDARY PAGES + RECURRING SAGE
+   ========================================= */
+.beyond-info-page{
+  background:#fbfaf6;
+}
+.beyond-info-page main{
+  overflow:hidden;
+}
+.beyond-info-page .page-intro{
+  border-bottom:1px solid #e4e9e2;
+  background:linear-gradient(135deg,#f9f7f1 0%,#fff 68%);
+}
+.beyond-info-page .page-intro h1{
+  max-width:850px;
+}
+.beyond-info-page .beyond-paths{
+  position:sticky;
+  top:0;
+  z-index:20;
+  padding:10px 5%;
+  background:rgba(255,255,255,.95);
+  border-bottom:1px solid #e4e8e2;
+  box-shadow:0 5px 18px rgba(14,31,77,.05);
+  backdrop-filter:blur(10px);
+}
+.beyond-info-page .beyond-paths a{
+  padding:9px 14px;
+  border-radius:999px;
+  transition:background .18s ease,color .18s ease,transform .18s ease;
+}
+.beyond-info-page .beyond-paths a:hover{
+  background:#edf3ea;
+  transform:translateY(-1px);
+}
+.beyond-info-page .beyond-paths a[aria-current="page"]{
+  background:#0E1F4D;
+  color:#fff;
+}
+.beyond-info-page .page-section{
+  position:relative;
+  isolation:isolate;
+}
+.beyond-info-page .page-section::after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:135px;
+  background:url('05_BRAND_ASSETS/sage-branch-reference.png') center/contain no-repeat;
+  opacity:.09;
+  pointer-events:none;
+  z-index:-1;
+}
+.beyond-info-page .page-section:nth-of-type(odd)::after{
+  right:-36px;
+  top:14px;
+  transform:rotate(-18deg);
+}
+.beyond-info-page .page-section:nth-of-type(even)::after{
+  left:-42px;
+  bottom:10px;
+  transform:rotate(160deg);
+}
+.beyond-info-page .notice,
+.beyond-info-page .contact-block,
+.beyond-info-page .info-grid article,
+.beyond-info-page .question-list article,
+.beyond-info-page .path-grid li{
+  background:#fff;
+  box-shadow:0 9px 24px rgba(14,31,77,.06);
+}
+.beyond-info-page .notice{
+  border-left:5px solid #7FA36B;
+}
+.beyond-info-page .contact-block{
+  border:1px solid #dfe5df;
+  border-left:5px solid #1E8A8A;
+}
+.beyond-info-page .info-grid article,
+.beyond-info-page .question-list article,
+.beyond-info-page .path-grid li{
+  border:1px solid #e0e6e1;
+}
+.beyond-info-page .page-button{
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.beyond-info-page .page-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(14,31,77,.14);
+}
+
+/* Dedicated service pages */
+.service-page-title-row{
+  display:flex;
+  gap:22px;
+  align-items:flex-start;
+}
+.service-page-icon{
+  width:62px;height:62px;flex:0 0 62px;
+  display:grid;place-items:center;
+  border-radius:16px;
+  background:#e6efe1;
+  color:#587746;
+}
+.service-page-icon svg{width:32px;height:32px}
+.service-copy{
+  max-width:900px;
+}
+.service-copy h4{
+  margin:30px 0 10px;
+  color:#0E1F4D;
+  font-size:1.15rem;
+}
+.service-copy p,.service-copy li{
+  color:#334155;
+  line-height:1.78;
+}
+.service-copy .learning-example{
+  margin:26px 0;
+  padding:22px 24px;
+  background:#faf8f2;
+  border-left:4px solid #886FBF;
+  border-radius:0 14px 14px 0;
+}
+.service-copy .primary-link{
+  display:inline-flex;
+  margin-top:12px;
+  padding:12px 18px;
+  border-radius:9px;
+  background:#0E1F4D;
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+}
+.back-services{
+  display:inline-flex;
+  margin-left:16px;
+}
+@media(max-width:650px){
+  .service-page-title-row{flex-direction:column}
+  .beyond-info-page .page-section::after{width:130px;height:90px}
+  .back-services{display:flex;margin:16px 0 0}
+}
