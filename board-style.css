@@ -431,3 +431,67 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
         align-self: flex-start;
     }
 }
+
+
+/* =========================================
+   SERVICE SECTION VISUAL POLISH
+   ========================================= */
+#services .section-container {
+    position: relative;
+}
+
+#services .section-container::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 150px;
+    height: 95px;
+    background: url('05_BRAND_ASSETS/sage-branch-reference.png') center/contain no-repeat;
+    opacity: 0.11;
+    pointer-events: none;
+}
+
+#services h2::after {
+    content: "";
+    display: block;
+    width: 74px;
+    height: 3px;
+    margin-top: 14px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1E8A8A 0 34%, #7FA36B 34% 67%, #886FBF 67% 100%);
+}
+
+#services .support-card {
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+#services .support-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(14, 31, 77, 0.11);
+}
+
+#services .support-card:hover .service-icon {
+    transform: scale(1.04);
+}
+
+#services .service-icon {
+    transition: transform .2s ease;
+}
+
+#services .toggle-symbol {
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+#services .support-card:hover .toggle-symbol {
+    transform: translateX(3px);
+}
+
+@media (max-width: 700px) {
+    #services .section-container::before {
+        width: 105px;
+        height: 70px;
+        opacity: 0.08;
+    }
+}
