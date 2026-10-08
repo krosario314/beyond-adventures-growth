@@ -522,3 +522,77 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
     color: #334155;
     line-height: 1.75;
 }
+
+
+/* =========================================
+   SITEWIDE SAGE BRANCH RHYTHM
+   ========================================= */
+#our-story,
+#services,
+#faq,
+#resources,
+#contact,
+#start-here,
+#team,
+#concerns {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+
+#our-story::before,
+#services::before,
+#faq::after,
+#resources::before,
+#contact::after,
+#start-here::before,
+#team::after,
+#concerns::after {
+  content:"" !important;
+  display:block !important;
+  position:absolute;
+  width:clamp(135px,16vw,225px);
+  height:145px;
+  background:url('05_BRAND_ASSETS/sage-branch-reference.png') center/contain no-repeat !important;
+  opacity:.085 !important;
+  pointer-events:none;
+  z-index:-1;
+}
+
+#our-story::before,
+#resources::before,
+#start-here::before {
+  left:-34px;
+  top:30px;
+  transform:rotate(24deg);
+}
+
+#services::before,
+#team::after {
+  right:-28px;
+  top:28px;
+  transform:rotate(196deg);
+}
+
+#faq::after,
+#contact::after,
+#concerns::after {
+  right:-40px;
+  bottom:18px;
+  transform:rotate(-22deg);
+}
+
+@media(max-width:700px){
+  #our-story::before,
+  #services::before,
+  #faq::after,
+  #resources::before,
+  #contact::after,
+  #start-here::before,
+  #team::after,
+  #concerns::after{
+    width:120px;
+    height:90px;
+    opacity:.06 !important;
+  }
+}
