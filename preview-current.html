@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Website Preview</title>
+<style>
+:root{
+  --navy:#0E1F4D;
+  --teal:#1E8A8A;
+  --purple:#886FBF;
+  --sage:#7FA36B;
+  --gold:#D4A24C;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#FAF8F2}
+main{width:min(1180px,92%);margin:0 auto;padding:40px 0 70px}
+h1{margin:0 0 8px;font-size:clamp(2rem,4vw,3rem)}
+.note{margin:0 0 34px;color:#526078}
+h2{margin:42px 0 10px}
+.intro{margin:0 0 24px;color:#526078}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  border-radius:16px;
+  box-shadow:0 8px 22px rgba(14,31,77,.06);
+  padding:28px 24px;
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.card h3{margin:10px 0 12px;font-size:1.2rem}
+.card p{margin:0;line-height:1.6;color:#41506a}
+.icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:25px;font-weight:700}
+.more{margin-top:auto;padding-top:22px;font-weight:700}
+.c1{background:#F1F6EE;border:1px solid #D7E4CE;border-left:4px solid #7FA36B}.c1 .icon{background:#DDEAD5;color:#587B45}
+.c2{background:#EEF8F7;border:1px solid #CFE7E3;border-left:4px solid #1E8A8A}.c2 .icon{background:#D5ECE8;color:#146E70}
+.c3{background:#F6F2FA;border:1px solid #DDD3EA;border-left:4px solid #886FBF}.c3 .icon{background:#E7DFF0;color:#69458F}
+.c4{background:#FFF9ED;border:1px solid #EEDFBF;border-left:4px solid #D4A24C}.c4 .icon{background:#F4E7C9;color:#956B22}
+.c5{background:#F2F6FA;border:1px solid #D5E0EA;border-left:4px solid #58779F}.c5 .icon{background:#DDE7F0;color:#426185}
+.c6{background:#F1F8F6;border:1px solid #D2E5DF;border-left:4px solid #6A9C92}.c6 .icon{background:#D9EBE6;color:#477A70}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.member{background:#fff;border:1px solid #DDE3E8;border-radius:16px;padding:22px;box-shadow:0 8px 22px rgba(14,31,77,.06)}
+.member img{width:100%;height:300px;object-fit:cover;object-position:center top;border-radius:12px;background:#fff;display:block}
+.placeholder{height:300px;border-radius:12px;background:#eef2e9;display:grid;place-items:center;color:#718096}
+.member h3{margin:18px 0 6px}
+.role{margin:0;color:#70529e;font-style:italic}
+.small{margin-top:10px;color:#6b7280;font-size:.9rem}
+@media(max-width:850px){.grid,.team{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid,.team{grid-template-columns:1fr}.card{min-height:0}}
+</style>
+</head>
+<body>
+<main>
+<h1>Beyond Adventures &amp; Growth — Current Preview</h1>
+<p class="note">Temporary live design preview while the full website branch is waiting to be published.</p>
+
+<h2>How we support children and families</h2>
+<p class="intro">Six coordinated service cards with the stronger left-border treatment you requested.</p>
+
+<section class="grid">
+<article class="card c1"><div class="icon">↗</div><h3>Naturalistic Learning &amp; NET</h3><p>Purposeful teaching through play, interests, and everyday routines.</p><div class="more">Learn More +</div></article>
+<article class="card c2"><div class="icon">◌</div><h3>Communication &amp; Connection</h3><p>Supporting expression, choices, self-advocacy, and shared experiences.</p><div class="more">Learn More +</div></article>
+<article class="card c3"><div class="icon">✓</div><h3>Independence &amp; Daily Living</h3><p>Building participation in the routines that matter to your family.</p><div class="more">Learn More +</div></article>
+<article class="card c4"><div class="icon">♡</div><h3>Family Guidance &amp; New Jersey Resources</h3><p>Practical caregiver support and a clearer starting point for finding help.</p><div class="more">Learn More +</div></article>
+<article class="card c5"><div class="icon">⌂</div><h3>Community-Based Learning</h3><p>Supporting meaningful participation in everyday community settings.</p><div class="more">Learn More +</div></article>
+<article class="card c6"><div class="icon">◎</div><h3>School Collaboration</h3><p>Working with educational teams to support consistency and student success.</p><div class="more">Learn More +</div></article>
+</section>
+
+<h2>Team photo check</h2>
+<p class="intro">Benjamin’s current white-background photo shown in the same 300px team-photo frame.</p>
+<section class="team">
+<article class="member"><div class="placeholder">Nicole photo frame</div><h3>Nicole K. Lamboy-Rosario, B.S.</h3><p class="role">Founder &amp; Executive Leader</p></article>
+<article class="member"><div class="placeholder">Courtney photo frame</div><h3>Courtney N. Crowley</h3><p class="role">Clinical Director &amp; Co-Founder</p></article>
+<article class="member"><img src="benjamin-youshei.png" alt="Benjamin Youshei"><h3>Benjamin Youshei</h3><p class="role">Current preview</p><p class="small">White-background image currently stored in GitHub.</p></article>
+</section>
+</main>
+</body>
+</html>
