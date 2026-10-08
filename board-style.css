@@ -596,3 +596,157 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
     opacity:.06 !important;
   }
 }
+
+
+/* =========================================
+   FAQ SECTION POLISH
+   ========================================= */
+#faq .section-container {
+    max-width: 940px;
+    position: relative;
+}
+
+#faq .section-intro {
+    max-width: 720px;
+    margin: 0 0 30px;
+    text-align: left;
+}
+
+#faq .faq-container {
+    display: grid;
+    gap: 14px;
+}
+
+#faq .faq-item {
+    margin: 0;
+    background: #FFFFFF;
+    border: 1px solid #DEE4E8;
+    border-left: 5px solid #7FA36B;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 7px 20px rgba(14, 31, 77, 0.045);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+#faq .faq-item:nth-child(4n+2) {
+    border-left-color: #1E8A8A;
+}
+
+#faq .faq-item:nth-child(4n+3) {
+    border-left-color: #886FBF;
+}
+
+#faq .faq-item:nth-child(4n) {
+    border-left-color: #C69234;
+}
+
+#faq .faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(14, 31, 77, 0.075);
+}
+
+#faq .faq-item summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px;
+    background: #FFFFFF;
+    color: #0E1F4D;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+#faq .faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+#faq .faq-item summary::marker {
+    content: "";
+}
+
+#faq .faq-item summary::after {
+    content: "+";
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #F2F5F3;
+    color: #0E1F4D;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: 500;
+    transition: transform .18s ease, background .18s ease;
+}
+
+#faq .faq-item[open] summary::after {
+    content: "−";
+    background: #E8EFE5;
+}
+
+#faq .faq-body {
+    padding: 2px 22px 22px;
+    color: #46516A;
+    line-height: 1.75;
+}
+
+#faq .faq-body p {
+    margin: 0;
+}
+
+#faq .faq-invitation {
+    position: relative;
+    margin-top: 30px;
+    padding: 28px 30px;
+    background: linear-gradient(135deg, #F7F9F5 0%, #FFFFFF 72%);
+    border: 1px solid #DCE5DE;
+    border-left: 5px solid #1E8A8A;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(14, 31, 77, 0.05);
+    overflow: hidden;
+}
+
+#faq .faq-invitation::after {
+    content: "";
+    position: absolute;
+    right: -28px;
+    bottom: -24px;
+    width: 150px;
+    height: 105px;
+    background: url('05_BRAND_ASSETS/sage-branch-reference.png') center/contain no-repeat;
+    opacity: .09;
+    pointer-events: none;
+}
+
+#faq .faq-invitation h3 {
+    margin: 0 0 7px;
+    color: #0E1F4D;
+}
+
+#faq .faq-invitation p {
+    margin: 0 0 14px;
+    color: #46516A;
+}
+
+#faq .faq-invitation .primary-link {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    #faq .faq-item summary {
+        padding: 18px;
+    }
+
+    #faq .faq-body {
+        padding: 2px 18px 20px;
+    }
+
+    #faq .faq-invitation {
+        padding: 24px 22px;
+    }
+}
