@@ -81,6 +81,18 @@ h2{margin:42px 0 10px}
 
 .preview-action{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;background:#0E1F4D;padding:11px 18px;border-radius:10px;min-height:44px;font-weight:700}
 .preview-action:hover{transform:translateY(-2px)}
+
+/* preview-faq-polish */
+.preview-faq-list{display:grid;gap:14px;margin-top:24px}
+.preview-faq-item{background:#fff;border:1px solid #DEE4E8;border-left:5px solid #7FA36B;border-radius:14px;overflow:hidden;box-shadow:0 7px 20px rgba(14,31,77,.045)}
+.preview-faq-item:nth-child(2){border-left-color:#1E8A8A}.preview-faq-item:nth-child(3){border-left-color:#886FBF}.preview-faq-item:nth-child(4){border-left-color:#C69234}
+.preview-faq-item summary{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;cursor:pointer;font-weight:700;list-style:none}
+.preview-faq-item summary::-webkit-details-marker{display:none}
+.preview-faq-item summary::after{content:"+";width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#F2F5F3;font-size:1.25rem;font-weight:500}
+.preview-faq-item[open] summary::after{content:"−";background:#E8EFE5}
+.preview-faq-item p{margin:0;padding:0 22px 22px;color:#46516A;line-height:1.7}
+.preview-faq-cta{position:relative;margin-top:28px;padding:28px 30px;background:linear-gradient(135deg,#F7F9F5 0%,#fff 72%);border:1px solid #DCE5DE;border-left:5px solid #1E8A8A;border-radius:16px;box-shadow:0 8px 22px rgba(14,31,77,.05)}
+.preview-faq-cta h3{margin:0 0 7px}.preview-faq-cta p{margin:0 0 14px;color:#46516A}
 </style>
 </head>
 <body>
@@ -120,6 +132,23 @@ h2{margin:42px 0 10px}
       <h2 style="margin:0;">Let’s Take the First Step Together</h2>
     </section>
     
+<section class="preview-faq" style="margin-top:48px;">
+      <p style="margin:0 0 8px;color:#1E8A8A;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;">FAQ</p>
+      <h2 style="margin:0 0 10px;">Questions You May Be Asking</h2>
+      <p class="intro" style="text-align:left;margin-left:0;">Starting something new can bring a lot of questions. You don’t have to figure it all out at once—we’re here to help you understand your next steps.</p>
+      <div class="preview-faq-list">
+        <details class="preview-faq-item"><summary>How do I get started?</summary><p>Start with the Get Support page to understand the next steps and current availability.</p></details>
+        <details class="preview-faq-item"><summary>Where will services take place?</summary><p>Beyond plans to begin with in-home ABA services in New Jersey.</p></details>
+        <details class="preview-faq-item"><summary>Will ABA change my child’s personality?</summary><p>The goal is meaningful support—not erasing personality, identity, interests, or individuality.</p></details>
+        <details class="preview-faq-item"><summary>Does Beyond use table-based teaching?</summary><p>Structured teaching may be useful for some goals, but learning can also happen through play, routines, movement, and real-life experiences.</p></details>
+      </div>
+      <div class="preview-faq-cta">
+        <h3>Still Have a Question?</h3>
+        <p>Let’s take the next step together.</p>
+        <a class="preview-action" href="preview-path.html?page=support">Ask a Question →</a>
+      </div>
+    </section>
+
 <section class="preview-secondary-paths" style="margin-top:48px;">
       <p style="margin:0 0 8px;color:#1E8A8A;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;">Explore Beyond</p>
       <h2 style="margin:0 0 10px;">Clear Next Steps</h2>
