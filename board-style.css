@@ -225,62 +225,72 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
    SIX SERVICE CARD COLORS
    ========================================= */
 
+/* Clean white cards with stronger individual accents */
 #services .support-card {
+    background: #FFFFFF;
     border-radius: 16px;
     box-shadow: 0 8px 22px rgba(14, 31, 77, 0.06);
     overflow: hidden;
 }
 
+/* 1. Naturalistic Learning & NET — deeper sage */
 #services .support-card:nth-child(1) {
-    background: #C6D8B8;
-    border: 1px solid #A6C394;
-    border-left: 5px solid #5F7F4C;
-    --service-accent: #4D6D3D;
-    --service-icon-bg: #B5CEA8;
+    background: linear-gradient(90deg, #EEF4E9 0%, #FFFFFF 30%);
+    border: 1px solid #CFDCC7;
+    border-left: 5px solid #587746;
+    --service-accent: #4D6B3D;
+    --service-icon-bg: #DCE8D4;
 }
 
+/* 2. Communication & Connection — teal */
 #services .support-card:nth-child(2) {
-    background: #FFFFFF;
-    border: 1px solid #C9DEDA;
+    background: linear-gradient(90deg, #ECF7F5 0%, #FFFFFF 30%);
+    border: 1px solid #CDE3DF;
     border-left: 5px solid #1E8A8A;
     --service-accent: #146E70;
-    --service-icon-bg: #D9EEEA;
+    --service-icon-bg: #D8ECE8;
 }
 
+/* 3. Independence & Daily Living — lavender */
 #services .support-card:nth-child(3) {
-    background: #D3BEE6;
-    border: 1px solid #B49BCD;
-    border-left: 5px solid #7756A6;
-    --service-accent: #624184;
-    --service-icon-bg: #C0A8D8;
+    background: linear-gradient(90deg, #F2EDF8 0%, #FFFFFF 30%);
+    border: 1px solid #DDD2E9;
+    border-left: 5px solid #7A5FAE;
+    --service-accent: #65468E;
+    --service-icon-bg: #E5DBEF;
 }
 
+/* 4. Family Guidance — warm gold */
 #services .support-card:nth-child(4) {
-    background: #FFFFFF;
-    border: 1px solid #E6D5AE;
-    border-left: 5px solid #C69234;
-    --service-accent: #8A611C;
-    --service-icon-bg: #F3E1BA;
+    background: linear-gradient(90deg, #FFF8E9 0%, #FFFFFF 30%);
+    border: 1px solid #E8D9B7;
+    border-left: 5px solid #C58E2F;
+    --service-accent: #8B611B;
+    --service-icon-bg: #F3E2BE;
 }
 
+/* 5. Community-Based Learning — blue */
 #services .support-card:nth-child(5) {
-    background: #BDD0E3;
-    border: 1px solid #9FB8D0;
+    background: linear-gradient(90deg, #EDF3F9 0%, #FFFFFF 30%);
+    border: 1px solid #D3DFEB;
     border-left: 5px solid #4F7098;
-    --service-accent: #3D5D80;
-    --service-icon-bg: #ACC3DA;
+    --service-accent: #3F5F84;
+    --service-icon-bg: #DCE6F0;
 }
 
+/* 6. School Collaboration — muted teal-sage */
 #services .support-card:nth-child(6) {
-    background: #FFFFFF;
-    border: 1px solid #CBDDD8;
+    background: linear-gradient(90deg, #EDF5F2 0%, #FFFFFF 30%);
+    border: 1px solid #D0E0DB;
     border-left: 5px solid #4E7F77;
     --service-accent: #3F6E66;
-    --service-icon-bg: #D7E8E4;
+    --service-icon-bg: #D8E8E3;
 }
 
+/* Slightly more compact than the prior version */
 #services .support-card > summary {
-    min-height: 300px;
+    min-height: 260px;
+    padding: 28px 24px;
 }
 
 #services .support-card[open] > summary {
