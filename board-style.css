@@ -232,51 +232,51 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 }
 
 #services .support-card:nth-child(1) {
-    background: #E5F0DE;
-    border: 1px solid #C8DDBD;
+    background: #D2E4C6;
+    border: 1px solid #B1CFA2;
     border-left: 4px solid #7FA36B;
     --service-accent: #587B45;
-    --service-icon-bg: #CFE1C5;
+    --service-icon-bg: #BFD8B3;
 }
 
 #services .support-card:nth-child(2) {
-    background: #DCEFEB;
-    border: 1px solid #B9DCD5;
+    background: #BFE0DA;
+    border: 1px solid #95CCC1;
     border-left: 4px solid #1E8A8A;
     --service-accent: #146E70;
-    --service-icon-bg: #C6E3DD;
+    --service-icon-bg: #A8D6CE;
 }
 
 #services .support-card:nth-child(3) {
-    background: #E9DFF3;
-    border: 1px solid #D0C1E0;
+    background: #D7C5E8;
+    border: 1px solid #BCA6D5;
     border-left: 4px solid #886FBF;
     --service-accent: #69458F;
-    --service-icon-bg: #D8CAE8;
+    --service-icon-bg: #C7B3DE;
 }
 
 #services .support-card:nth-child(4) {
-    background: #F8EBCF;
-    border: 1px solid #E4CFA6;
+    background: #EFD397;
+    border: 1px solid #DAB96F;
     border-left: 4px solid #D4A24C;
     --service-accent: #956B22;
-    --service-icon-bg: #ECD9B4;
+    --service-icon-bg: #E4C886;
 }
 
 #services .support-card:nth-child(5) {
-    background: #E1EAF3;
-    border: 1px solid #C5D4E3;
+    background: #C6D8EB;
+    border: 1px solid #A8BED8;
     border-left: 4px solid #58779F;
     --service-accent: #426185;
-    --service-icon-bg: #CEDCE9;
+    --service-icon-bg: #B7CCE1;
 }
 
 #services .support-card:nth-child(6) {
-    background: #DDECE8;
-    border: 1px solid #BED8D1;
-    border-left: 4px solid #6A9C92;
-    --service-accent: #477A70;
-    --service-icon-bg: #C9E0DA;
+    background: #D7D9E8;
+    border: 1px solid #B7BED6;
+    border-left: 4px solid #6D7EA5;
+    --service-accent: #4F6087;
+    --service-icon-bg: #C3C9DE;
 }
 
 #services .support-card > summary {
