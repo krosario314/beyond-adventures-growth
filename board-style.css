@@ -901,3 +901,36 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 #faq .faq-item:nth-child(4n+2) { border-left-color: #1E8A8A; }
 #faq .faq-item:nth-child(4n+3) { border-left-color: #7A5FAE; }
 #faq .faq-item:nth-child(4n)   { border-left-color: #C58E2F; }
+
+
+/* =========================================
+   OCT 9 — STRONGER SERVICE CARD FILLS
+   ========================================= */
+/* End-of-file override so the six cards read as softly colored, not white. */
+#services .service-container > .support-card:nth-child(1) {
+  background: #E3ECD9 !important;
+}
+#services .service-container > .support-card:nth-child(2) {
+  background: #DDEDEA !important;
+}
+#services .service-container > .support-card:nth-child(3) {
+  background: #E9E0F2 !important;
+}
+#services .service-container > .support-card:nth-child(4) {
+  background: #F6EBCF !important;
+}
+#services .service-container > .support-card:nth-child(5) {
+  background: #E2EBF4 !important;
+}
+#services .service-container > .support-card:nth-child(6) {
+  background: #DFEBE7 !important;
+}
+
+/* Keep text areas transparent so the card color shows through. */
+#services .service-container > .support-card > p,
+#services .service-container > .support-card > h3,
+#services .service-container > .support-card > .service-icon,
+#services .service-container > .support-card > .support-toggle {
+  position: relative;
+  z-index: 1;
+}
