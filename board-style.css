@@ -235,7 +235,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* 1. Naturalistic Learning & NET — deeper sage */
 #services .support-card:nth-child(1) {
-    background: linear-gradient(90deg, #EEF4E9 0%, #FFFFFF 30%);
+    background: linear-gradient(115deg, #E5EEDF 0%, #F1F5ED 68%, #FAF8F2 100%);
     border: 1px solid #CFDCC7;
     border-left: 5px solid #587746;
     --service-accent: #4D6B3D;
@@ -244,7 +244,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* 2. Communication & Connection — teal */
 #services .support-card:nth-child(2) {
-    background: linear-gradient(90deg, #ECF7F5 0%, #FFFFFF 30%);
+    background: linear-gradient(115deg, #E1F1EE 0%, #EFF7F5 68%, #FAF8F2 100%);
     border: 1px solid #CDE3DF;
     border-left: 5px solid #1E8A8A;
     --service-accent: #146E70;
@@ -253,7 +253,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* 3. Independence & Daily Living — lavender */
 #services .support-card:nth-child(3) {
-    background: linear-gradient(90deg, #F2EDF8 0%, #FFFFFF 30%);
+    background: linear-gradient(115deg, #EAE2F3 0%, #F3EEF8 68%, #FAF8F2 100%);
     border: 1px solid #DDD2E9;
     border-left: 5px solid #7A5FAE;
     --service-accent: #65468E;
@@ -262,7 +262,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* 4. Family Guidance — warm gold */
 #services .support-card:nth-child(4) {
-    background: linear-gradient(90deg, #FFF8E9 0%, #FFFFFF 30%);
+    background: linear-gradient(115deg, #F8EDCF 0%, #FCF5E5 68%, #FAF8F2 100%);
     border: 1px solid #E8D9B7;
     border-left: 5px solid #C58E2F;
     --service-accent: #8B611B;
@@ -271,7 +271,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* 5. Community-Based Learning — blue */
 #services .support-card:nth-child(5) {
-    background: linear-gradient(90deg, #EDF3F9 0%, #FFFFFF 30%);
+    background: linear-gradient(115deg, #E4EDF6 0%, #F0F4F8 68%, #FAF8F2 100%);
     border: 1px solid #D3DFEB;
     border-left: 5px solid #4F7098;
     --service-accent: #3F5F84;
@@ -280,7 +280,7 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
 
 /* 6. School Collaboration — muted teal-sage */
 #services .support-card:nth-child(6) {
-    background: linear-gradient(90deg, #EDF5F2 0%, #FFFFFF 30%);
+    background: linear-gradient(115deg, #E1ECE8 0%, #EEF5F2 68%, #FAF8F2 100%);
     border: 1px solid #D0E0DB;
     border-left: 5px solid #4E7F77;
     --service-accent: #3F6E66;
