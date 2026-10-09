@@ -856,3 +856,48 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
     padding-top: 16px;
   }
 }
+
+
+/* =========================================
+   OCT 9 — RESTORE IVORY SECTIONS + SAGE FAQ
+   ========================================= */
+
+/* Restore the warm off-white section rhythm that was approved earlier. */
+.hero,
+#services,
+#resources,
+#start-here {
+  background: #FAF8F2 !important;
+}
+
+/* Keep the FAQ section calm and airy, but move the cards away from stark white. */
+#faq {
+  background: #FFFFFF;
+}
+
+#faq .faq-item {
+  background: #F3F7F1 !important;
+  border-color: #D5E1D2;
+}
+
+#faq .faq-item summary {
+  background: #F3F7F1 !important;
+}
+
+#faq .faq-body {
+  background: #FAFCF8;
+}
+
+#faq .faq-item summary::after {
+  background: #E2ECDT;
+}
+
+#faq .faq-item[open] summary::after {
+  background: #D7E5D0;
+}
+
+/* Preserve the individual accent borders while keeping the shared sage fill. */
+#faq .faq-item:nth-child(4n+1) { border-left-color: #587746; }
+#faq .faq-item:nth-child(4n+2) { border-left-color: #1E8A8A; }
+#faq .faq-item:nth-child(4n+3) { border-left-color: #7A5FAE; }
+#faq .faq-item:nth-child(4n)   { border-left-color: #C58E2F; }
