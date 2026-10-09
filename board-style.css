@@ -934,3 +934,32 @@ footer,footer p,footer a,footer li,footer h2{color:#fff}
   position: relative;
   z-index: 1;
 }
+
+
+/* =========================================
+   OCT 9 — STRONGER SAGE FAQ FILLS
+   ========================================= */
+#faq .faq-item {
+  background: #E7EFE3 !important;
+  border-color: #C8D8C1 !important;
+}
+
+#faq .faq-item summary {
+  background: #E7EFE3 !important;
+}
+
+#faq .faq-body {
+  background: #F1F6EE !important;
+}
+
+#faq .faq-item summary::after {
+  background: #D3E1CC !important;
+}
+
+#faq .faq-item[open] summary::after {
+  background: #C7D8BE !important;
+}
+
+#faq .faq-invitation {
+  background: #EEF4EA !important;
+}
